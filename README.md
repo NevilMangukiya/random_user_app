@@ -1,16 +1,4 @@
 # adv_random_pepole_app
+![WhatsApp Image 2022-11-13 at 12 11 18 AM](https://user-images.githubusercontent.com/111499522/201489805-cd774112-3baf-4022-abac-743f87181880.jpeg)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WhatsApp Image 2022-11-13 at 12 11 33 AM](https://user-images.githubusercontent.com/111499522/201489801-a363946c-9218-43a1-84b6-7c4af5dc381f.jpeg)

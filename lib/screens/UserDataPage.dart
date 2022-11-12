@@ -1,0 +1,163 @@
+import 'package:flutter/material.dart';
+
+import '../models/randomuserModels.dart';
+
+class DataPage extends StatefulWidget {
+  const DataPage({Key? key}) : super(key: key);
+
+  @override
+  State<DataPage> createState() => _DataPageState();
+}
+
+class _DataPageState extends State<DataPage> {
+  TextStyle subTitleTextStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w500, fontSize: 22);
+  TextStyle textStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w500, fontSize: 18);
+  TextStyle titleTextStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w600, fontSize: 24);
+  @override
+  Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as RandomUser;
+    return Scaffold(
+      appBar: AppBar(
+        foregroundColor: const Color(0xff303030),
+        elevation: 1,
+        title: const Text(
+          "User",
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+        ),
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {});
+            },
+            icon: Icon(Icons.refresh),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.only(top: 50),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 60,
+              backgroundImage: NetworkImage(args.imageUrl),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              "${args.name} ${args.firstName} ${args.lastName}",
+              style: const TextStyle(
+                  color: Color(0xff303030),
+                  fontSize: 22,
+                  fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(args.email,
+                style: const TextStyle(
+                    color: Colors.black45,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500)),
+            Container(
+              padding: const EdgeInsets.all(30),
+              height: MediaQuery.of(context).size.height * 0.72,
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.only(top: 20),
+              decoration: const BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50)),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Gender", style: subTitleTextStyle),
+                      Text(
+                        args.gender,
+                        style: textStyle,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Divider(
+                    color: Colors.white,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Age", style: subTitleTextStyle),
+                      Text(
+                        "${args.age}",
+                        style: textStyle,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Divider(
+                    color: Colors.white,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text("Address", style: subTitleTextStyle),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Text(
+                    "${args.area}, ${args.city}, ${args.state}, ${args.country} ${args.pincode}",
+                    style: textStyle,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Divider(
+                    color: Colors.white,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text("Contact Number", style: subTitleTextStyle),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  Text(
+                    args.phone,
+                    style: textStyle,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+      backgroundColor: const Color(0xffEDEDED),
+    );
+  }
+}
